@@ -1,4 +1,5 @@
 import PlotSeriesSplitter from './components/plot-series-splitter';
+import './styles.css';
 
 const components = [
   {

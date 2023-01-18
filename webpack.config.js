@@ -11,6 +11,14 @@ module.exports = {
       import: './src/index.js',
     },
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
