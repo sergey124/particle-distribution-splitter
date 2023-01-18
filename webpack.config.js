@@ -1,6 +1,7 @@
 const path = require('path');
 
-var webpack = require("webpack");
+const webpack = require("webpack");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 console.log('LOG', path.resolve(__dirname, 'dist'))
 module.exports = {
@@ -19,7 +20,7 @@ module.exports = {
     compress: true,
     watchFiles: ['src/**/*.js', 'public/**/*'],
     static: {                               
-      directory: path.join(__dirname, './dist/'),  
+      directory: path.join(__dirname, './public/'),  
       watch: true
     }
   },
@@ -27,6 +28,10 @@ module.exports = {
     new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery"
+    }),
+    new HtmlWebPackPlugin({
+      template: "./public/index.html",
+      filename: "./index.html"
     })
   ]
 };
